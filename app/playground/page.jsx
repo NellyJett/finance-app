@@ -1,5 +1,6 @@
 import PageHeader from "../components/page-header"
 import Trend from "../components/trend"
+import TransactionItem from "../components/transaction-item"
 
 const Playground = () =>{
     return(
@@ -15,10 +16,21 @@ const Playground = () =>{
                 <h2  className="mb-4 text-lg font-mono">Trend</h2>
                 <hr className="mb-4 border-gray-200 dark:border-gray-800" />
                 <div className="flex space-x-8">
-                    <Trend type="Income" amount={1000} />
-                    <Trend type="Expense" amount={12000} />
-                    <Trend type="Investment" amount={10000} />
-                    <Trend type="Saving" amount={500} />
+                    <Trend type="Income" amount={1000} prevAmount={900} />
+                    <Trend type="Expense" amount={12000} prevAmount={10000} />
+                    <Trend type="Investment" amount={7000} prevAmount={11000} />
+                    <Trend type="Saving" amount={500} prevAmount={950} />
+                </div>
+            </div>
+
+            <div className="space-y-4">
+                <h2  className="mb-4 text-lg font-mono">TransactionItem</h2>
+                <hr className="mb-4 border-gray-200 dark:border-gray-800" />
+                <div className="">
+                    <TransactionItem type="Income" description="Salary" amount={2000} />
+                    <TransactionItem type="Expense" category="Food" description="Going out to eat" amount={29} />
+                    <TransactionItem type="Investment" description="In Microsoft" amount={5500} />
+                    <TransactionItem type="Saving" description="For children" amount={9000} />
                 </div>
             </div>
         
